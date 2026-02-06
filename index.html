@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Siddhi's Official Treat Portal</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #121212; color: #00ffcc; text-align: center; padding: 50px; }
+        .container { border: 2px solid #00ffcc; padding: 30px; border-radius: 15px; display: inline-block; background: #1e1e1e; box-shadow: 0 0 20px #00ffcc; }
+        h1 { font-size: 2.5em; }
+        .btn-container { margin-top: 30px; position: relative; height: 100px; }
+        button { padding: 15px 30px; font-size: 1.2em; cursor: pointer; border-radius: 10px; border: none; transition: 0.3s; }
+        #yesBtn { background: #00ffcc; color: #121212; font-weight: bold; }
+        #noBtn { background: #ff4444; color: white; position: absolute; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hello, Siddhi! 👋</h1>
+    <p>The FAZXVIE system has detected a critical deficit in my snack levels.</p>
+    <p><strong>Will you authorize a treat transfer today?</strong></p>
+
+    <div class="btn-container">
+        <button id="yesBtn" onclick="celebrate()">YES, DEFINITELY</button>
+        <button id="noBtn" onmouseover="moveButton()">NO</button>
+    </div>
+</div>
+
+<script>
+    function moveButton() {
+        const btn = document.getElementById('noBtn');
+        const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+    }
+
+    function celebrate() {
+        document.body.innerHTML = `
+            <div class="container">
+                <h1 style="color: #ff0077;">Excellent Choice, Siddhi! 🍕</h1>
+                <p>Transfer Protocol Initiated.</p>
+                <p>Please present the treat at the nearest meetup point.</p>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJndnZpZzB0bmV5amV4ZzR0bmV5amV4ZzR0bmV5amV4ZzR0bmV5amV4ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKDkDbIDJieKbVm/giphy.gif" width="300">
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>
